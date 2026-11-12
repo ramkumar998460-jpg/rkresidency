@@ -1,0 +1,1789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The RK Residency | Premier Shopping & Lifestyle Mall</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    /* =================================================================
+       GLOBAL DESIGN SYSTEM
+       ================================================================= */
+    :root {
+      --bg-main: #0a0e17;
+      --bg-surface: #111726;
+      --bg-card: #161e31;
+      --bg-card-hover: #1e2842;
+      --gold-primary: #d4af37;
+      --gold-light: #f3e5ab;
+      --gold-dark: #997d24;
+      --text-white: #ffffff;
+      --text-muted: #94a3b8;
+      --text-sub: #cbd5e1;
+      --border-color: rgba(212, 175, 55, 0.2);
+      --border-light: rgba(255, 255, 255, 0.08);
+      --font-display: 'Cinzel', serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      --shadow-gold: 0 10px 30px rgba(212, 175, 55, 0.15);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-white);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 28px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: var(--transition);
+      border: 1px solid transparent;
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold-light), var(--gold-primary));
+      color: #0b0f19;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25);
+    }
+    .btn-gold:hover {
+      background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border-color: var(--gold-primary);
+      color: var(--gold-light);
+    }
+    .btn-outline:hover {
+      background: rgba(212, 175, 55, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 50px auto;
+    }
+
+    .section-badge {
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      letter-spacing: 2px;
+      font-weight: 600;
+      color: var(--gold-primary);
+      background: rgba(212, 175, 55, 0.1);
+      padding: 6px 16px;
+      border-radius: 50px;
+      border: 1px solid var(--border-color);
+      margin-bottom: 15px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      color: #fff;
+      margin-bottom: 15px;
+      line-height: 1.25;
+    }
+
+    .section-subtitle {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    /* =================================================================
+       NAVIGATION BAR
+       ================================================================= */
+    .mall-topbar {
+      background: #060910;
+      border-bottom: 1px solid var(--border-light);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      padding: 8px 0;
+    }
+    .topbar-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .topbar-items {
+      display: flex;
+      gap: 25px;
+    }
+    .topbar-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .topbar-item i {
+      color: var(--gold-primary);
+    }
+
+    .mall-navbar {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(11, 15, 25, 0.92);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid var(--border-light);
+      padding: 16px 0;
+      transition: var(--transition);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-symbol {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold-primary));
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      color: #0b0f19;
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25);
+    }
+
+    .logo-text h1 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      letter-spacing: 1px;
+      color: #fff;
+      line-height: 1.1;
+    }
+    .logo-text span {
+      font-size: 0.72rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gold-primary);
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav-link {
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: var(--text-sub);
+      transition: var(--transition);
+      cursor: pointer;
+      position: relative;
+      padding: 6px 0;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--gold-light);
+    }
+
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--gold-primary);
+      border-radius: 2px;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+
+    /* =================================================================
+       PAGE ROUTER CONTAINER
+       ================================================================= */
+    .page-section {
+      display: none;
+      animation: fadeIn 0.4s ease forwards;
+      min-height: 80vh;
+      padding: 60px 0 100px;
+    }
+
+    .page-section.active-page {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* =================================================================
+       HOME PAGE
+       ================================================================= */
+    #home.page-section {
+      padding-top: 0;
+    }
+
+    .hero-banner {
+      position: relative;
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(180deg, rgba(10, 14, 23, 0.45) 0%, rgba(10, 14, 23, 0.95) 100%),
+                  url('https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .hero-content {
+      max-width: 780px;
+      padding: 40px 0;
+    }
+
+    .hero-tag {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--gold-primary);
+      font-weight: 600;
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: 4rem;
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+    .hero-title span {
+      background: linear-gradient(135deg, #ffffff 40%, var(--gold-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-desc {
+      font-size: 1.2rem;
+      color: var(--text-sub);
+      margin-bottom: 35px;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    /* Quick stats strip */
+    .mall-stats-strip {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+      padding: 35px 0;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      text-align: center;
+    }
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 2.6rem;
+      font-weight: 700;
+      color: var(--gold-light);
+    }
+    .stat-label {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Highlights Section */
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .highlight-card {
+      background: var(--bg-surface);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-light);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+    .highlight-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--gold-primary);
+      box-shadow: var(--shadow-gold);
+    }
+    .highlight-img {
+      height: 220px;
+      width: 100%;
+      object-fit: cover;
+    }
+    .highlight-info {
+      padding: 28px;
+    }
+    .highlight-info h3 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    .highlight-info p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+    .highlight-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gold-primary);
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    /* Quick Timings Strip */
+    .quick-timings-banner {
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.12), rgba(17, 23, 38, 0.8));
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 70px;
+    }
+    .timing-text h3 {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+    .timing-text p {
+      color: var(--text-muted);
+    }
+
+    /* =================================================================
+       ABOUT PAGE
+       ================================================================= */
+    .about-story {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 60px;
+      align-items: center;
+      margin-bottom: 90px;
+    }
+    .story-content h2 {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      line-height: 1.25;
+    }
+    .story-content p {
+      color: var(--text-sub);
+      margin-bottom: 20px;
+      font-size: 1.05rem;
+    }
+    .story-gallery {
+      position: relative;
+    }
+    .story-img-main {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+    .story-badge-float {
+      position: absolute;
+      bottom: -20px;
+      left: -20px;
+      background: var(--bg-card);
+      border: 1px solid var(--gold-primary);
+      padding: 20px 28px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-gold);
+    }
+    .story-badge-float span {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--gold-light);
+    }
+    .story-badge-float small {
+      color: var(--text-muted);
+    }
+
+    /* Amenities Grid */
+    .amenities-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+      margin-top: 40px;
+    }
+    .amenity-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      padding: 30px 24px;
+      text-align: center;
+      transition: var(--transition);
+    }
+    .amenity-card:hover {
+      border-color: var(--gold-primary);
+      transform: translateY(-5px);
+    }
+    .amenity-icon {
+      width: 60px;
+      height: 60px;
+      background: rgba(212, 175, 55, 0.1);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 18px;
+      color: var(--gold-light);
+      font-size: 1.5rem;
+    }
+    .amenity-card h4 {
+      font-size: 1.15rem;
+      margin-bottom: 10px;
+    }
+    .amenity-card p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* =================================================================
+       SHOPS & DIRECTORY SECTION
+       ================================================================= */
+    .directory-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-bottom: 45px;
+    }
+    .search-bar-wrap {
+      max-width: 650px;
+      width: 100%;
+      margin: 0 auto;
+      position: relative;
+    }
+    .search-bar-wrap input {
+      width: 100%;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      padding: 16px 20px 16px 50px;
+      border-radius: 50px;
+      color: #fff;
+      font-size: 1rem;
+      outline: none;
+      transition: var(--transition);
+    }
+    .search-bar-wrap input:focus {
+      border-color: var(--gold-light);
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+    }
+    .search-icon {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gold-primary);
+      font-size: 1.1rem;
+    }
+
+    .category-chips {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .chip {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      color: var(--text-sub);
+      padding: 9px 22px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+    .chip:hover,
+    .chip.active {
+      background: var(--gold-primary);
+      color: #0b0f19;
+      font-weight: 600;
+      border-color: var(--gold-primary);
+    }
+
+    .shops-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 28px;
+    }
+    .store-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .store-card:hover {
+      border-color: var(--gold-primary);
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-gold);
+    }
+    .store-thumb {
+      position: relative;
+      height: 180px;
+      overflow: hidden;
+    }
+    .store-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .store-card:hover .store-thumb img {
+      transform: scale(1.06);
+    }
+    .store-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(11, 15, 25, 0.85);
+      border: 1px solid var(--border-color);
+      color: var(--gold-light);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      backdrop-filter: blur(5px);
+    }
+    .store-body {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .store-name {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+    .store-desc {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 18px;
+      flex: 1;
+    }
+    .store-meta {
+      border-top: 1px solid var(--border-light);
+      padding-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--text-sub);
+    }
+    .store-meta span i {
+      color: var(--gold-primary);
+      margin-right: 5px;
+    }
+
+    /* =================================================================
+       DINING & ENTERTAINMENT SECTION
+       ================================================================= */
+    .dining-showcase {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      margin-top: 40px;
+    }
+    .dining-featured {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      min-height: 400px;
+      border: 1px solid var(--border-light);
+    }
+    .dining-featured img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .dining-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 30%, rgba(10, 14, 23, 0.95) 90%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 35px;
+    }
+    .dining-overlay h3 {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+    .dining-overlay p {
+      color: var(--text-sub);
+      margin-bottom: 16px;
+    }
+
+    /* =================================================================
+       EVENTS & OFFERS SECTION
+       ================================================================= */
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .event-card {
+      background: var(--bg-surface);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-light);
+      transition: var(--transition);
+    }
+    .event-card:hover {
+      border-color: var(--gold-primary);
+      transform: translateY(-6px);
+    }
+    .event-img {
+      height: 200px;
+      width: 100%;
+      object-fit: cover;
+    }
+    .event-content {
+      padding: 24px;
+    }
+    .event-date-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gold-primary);
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .event-title {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+    .event-text {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      margin-bottom: 16px;
+    }
+
+    /* =================================================================
+       CONTACT & VISIT SECTION
+       ================================================================= */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 50px;
+      margin-top: 40px;
+    }
+    .contact-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+    }
+    .form-group {
+      margin-bottom: 22px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.88rem;
+      margin-bottom: 8px;
+      color: var(--text-sub);
+    }
+    .form-control {
+      width: 100%;
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      outline: none;
+      transition: var(--transition);
+    }
+    .form-control:focus {
+      border-color: var(--gold-primary);
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
+    }
+    textarea.form-control {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      margin-bottom: 35px;
+    }
+    .info-item {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+    .info-icon {
+      width: 45px;
+      height: 45px;
+      border-radius: 10px;
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid var(--border-color);
+      display: grid;
+      place-items: center;
+      color: var(--gold-primary);
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .info-text h4 {
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+    }
+    .info-text p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+    }
+
+    .map-embed {
+      width: 100%;
+      height: 220px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      background: #1c2438;
+      display: grid;
+      place-items: center;
+      color: var(--text-muted);
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* =================================================================
+       FOOTER
+       ================================================================= */
+    .mall-footer {
+      background: #060910;
+      border-top: 1px solid var(--border-light);
+      padding: 70px 0 30px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+    .footer-desc {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      margin: 18px 0 22px;
+      line-height: 1.7;
+    }
+    .social-links {
+      display: flex;
+      gap: 12px;
+    }
+    .social-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      display: grid;
+      place-items: center;
+      color: var(--text-sub);
+      transition: var(--transition);
+    }
+    .social-btn:hover {
+      background: var(--gold-primary);
+      color: #000;
+      border-color: var(--gold-primary);
+    }
+    .footer-col h4 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .footer-links a {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+    .footer-links a:hover {
+      color: var(--gold-light);
+      padding-left: 5px;
+    }
+    .newsletter-form {
+      display: flex;
+      gap: 8px;
+      margin-top: 15px;
+    }
+    .newsletter-input {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      padding: 12px 14px;
+      border-radius: var(--radius-sm);
+      color: #fff;
+      font-size: 0.88rem;
+      outline: none;
+      width: 100%;
+    }
+    .footer-bottom {
+      border-top: 1px solid var(--border-light);
+      padding-top: 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    /* Modal for Store / Success Toast */
+    .toast-msg {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--gold-primary);
+      color: #0b0f19;
+      padding: 14px 26px;
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      transform: translateY(120px);
+      opacity: 0;
+      transition: var(--transition);
+      z-index: 10000;
+    }
+    .toast-msg.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* =================================================================
+       RESPONSIVE DESIGN
+       ================================================================= */
+    @media (max-width: 1024px) {
+      .hero-title { font-size: 3.2rem; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+      .highlights-grid { grid-template-columns: 1fr; }
+      .about-story { grid-template-columns: 1fr; }
+      .amenities-grid { grid-template-columns: repeat(2, 1fr); }
+      .dining-showcase { grid-template-columns: 1fr; }
+      .events-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .mall-topbar { display: none; }
+      .hero-title { font-size: 2.5rem; }
+      .section-title { font-size: 2rem; }
+      .mobile-menu-btn { display: block; }
+      .nav-links {
+        position: fixed;
+        top: 76px;
+        left: 0;
+        width: 100%;
+        background: var(--bg-surface);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px 25px;
+        gap: 20px;
+        border-bottom: 1px solid var(--border-color);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+        display: none;
+      }
+      .nav-links.mobile-open {
+        display: flex;
+      }
+      .quick-timings-banner {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+      }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =================================================================
+       TOP UTILITY BAR
+       ================================================================= -->
+  <div class="mall-topbar">
+    <div class="container topbar-content">
+      <div class="topbar-items">
+        <div class="topbar-item">
+          <i class="fa-regular fa-clock"></i>
+          <span>Open Today: 10:00 AM – 11:00 PM</span>
+        </div>
+        <div class="topbar-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Residency Boulevard, City Center Metro Gate 4</span>
+        </div>
+      </div>
+      <div class="topbar-items">
+        <div class="topbar-item">
+          <i class="fa-solid fa-square-parking"></i>
+          <span>Valet & Multi-level Parking Available</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =================================================================
+       PRIMARY HEADER & NAVIGATION
+       ================================================================= -->
+  <header class="mall-navbar">
+    <div class="container nav-container">
+      <a href="#home" class="logo">
+        <div class="logo-symbol">RK</div>
+        <div class="logo-text">
+          <h1>THE RK RESIDENCY</h1>
+          <span>Mall & Lifestyle Center</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home" class="nav-link active" onclick="navigatePage('home')">Home</a></li>
+          <li><a href="#about" class="nav-link" onclick="navigatePage('about')">About Us</a></li>
+          <li><a href="#shops" class="nav-link" onclick="navigatePage('shops')">Directory & Shops</a></li>
+          <li><a href="#dining" class="nav-link" onclick="navigatePage('dining')">Dine & Cinema</a></li>
+          <li><a href="#events" class="nav-link" onclick="navigatePage('events')">Events & Offers</a></li>
+          <li><a href="#contact" class="nav-link" onclick="navigatePage('contact')">Plan Visit / Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="mobile-menu-btn" id="mobileToggle" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- =================================================================
+       PAGE 1: HOME PAGE
+       ================================================================= -->
+  <section id="home" class="page-section active-page">
+    <div class="hero-banner">
+      <div class="container">
+        <div class="hero-content">
+          <span class="hero-tag">Welcome to The RK Residency</span>
+          <h2 class="hero-title">Experience <span>Grandeur</span> In Every Moment.</h2>
+          <p class="hero-desc">
+            Discover a distinguished sanctuary of global luxury brands, Michelin-inspired dining, 4K IMAX cinema, and bespoke leisure spread across 550,000 square feet of architectural excellence.
+          </p>
+          <div class="hero-actions">
+            <a href="#shops" class="btn btn-gold" onclick="navigatePage('shops')">
+              <i class="fa-solid fa-bag-shopping"></i> Explore Directory
+            </a>
+            <a href="#contact" class="btn btn-outline" onclick="navigatePage('contact')">
+              <i class="fa-regular fa-compass"></i> Directions & Hours
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats strip -->
+    <div class="mall-stats-strip">
+      <div class="container">
+        <div class="stats-grid">
+          <div>
+            <div class="stat-number">180+</div>
+            <div class="stat-label">Luxury Brands</div>
+          </div>
+          <div>
+            <div class="stat-number">35+</div>
+            <div class="stat-label">Gourmet Eateries</div>
+          </div>
+          <div>
+            <div class="stat-number">8 Screens</div>
+            <div class="stat-label">IMAX Multiplex</div>
+          </div>
+          <div>
+            <div class="stat-number">2,000+</div>
+            <div class="stat-label">Smart Parking Bays</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Highlights -->
+    <div class="container" style="padding-top: 80px;">
+      <div class="section-header">
+        <span class="section-badge">Curated Spaces</span>
+        <h2 class="section-title">The Four Pillars of RK Residency</h2>
+        <p class="section-subtitle">A seamless harmony of haute couture, gastronomy, family amusement, and hospitality.</p>
+      </div>
+
+      <div class="highlights-grid">
+        <div class="highlight-card" onclick="navigatePage('shops')">
+          <img class="highlight-img" src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800&auto=format&fit=crop" alt="High Fashion" />
+          <div class="highlight-info">
+            <h3>Couture & Fashion</h3>
+            <p>From prestigious international runway names to flagship street style stores.</p>
+            <span class="highlight-link">Browse 120+ Brands <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+
+        <div class="highlight-card" onclick="navigatePage('dining')">
+          <img class="highlight-img" src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800&auto=format&fit=crop" alt="Fine Dining" />
+          <div class="highlight-info">
+            <h3>Epicurean Dining</h3>
+            <p>Rooftop terraces, artisanal coffee houses, and an interactive global food galleria.</p>
+            <span class="highlight-link">View Restaurants <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+
+        <div class="highlight-card" onclick="navigatePage('dining')">
+          <img class="highlight-img" src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=800&auto=format&fit=crop" alt="Cinema & Arcade" />
+          <div class="highlight-info">
+            <h3>Entertainment Hub</h3>
+            <p>Laser IMAX theater, virtual reality gaming arcade, and kids wonderland arena.</p>
+            <span class="highlight-link">Discover Leisure <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Timings Banner -->
+      <div class="quick-timings-banner">
+        <div class="timing-text">
+          <h3>Plan Your Next Luxury Day Out</h3>
+          <p>Valet service, complimentary Wi-Fi, and wheelchair assistance available at Concierge Desk 1.</p>
+        </div>
+        <a href="#contact" class="btn btn-gold" onclick="navigatePage('contact')">
+          <i class="fa-solid fa-bell-concierge"></i> Guest Services
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       PAGE 2: ABOUT SECTION
+       ================================================================= -->
+  <section id="about" class="page-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">The Legacy</span>
+        <h2 class="section-title">About The RK Residency</h2>
+        <p class="section-subtitle">Conceived as a masterstroke in commercial modernism, crafted for discerning guests.</p>
+      </div>
+
+      <div class="about-story">
+        <div class="story-content">
+          <h2>Redefining the Contemporary Retail Experience</h2>
+          <p>
+            Established with the vision to deliver a world-class cosmopolitan center, <strong>The RK Residency Mall</strong> stands as an iconic landmark at the city’s heart. Inspired by classical European colonnades blended with modern minimalist glass atriums, natural skylights flood the 5-tiered promenade.
+          </p>
+          <p>
+            Beyond shopping, The RK Residency is a vibrant cultural epicenter, hosting art exhibitions, festive galas, runway showcases, and pop-up events year-round. Our LEED Gold-certified facility incorporates solar harvesting, smart water recycling, and sustainable zero-emission waste processing.
+          </p>
+          <div style="margin-top: 25px;">
+            <a href="#contact" class="btn btn-outline" onclick="navigatePage('contact')">
+              <i class="fa-solid fa-handshake"></i> Retail Leasing Inquiries
+            </a>
+          </div>
+        </div>
+
+        <div class="story-gallery">
+          <img class="story-img-main" src="https://images.unsplash.com/photo-1567449303078-57ad995bd301?q=80&w=800&auto=format&fit=crop" alt="Mall Interior Skylight" />
+          <div class="story-badge-float">
+            <span>550,000+</span>
+            <small>Sq. Ft. Retail & Entertainment Arena</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Amenities & Services -->
+      <div class="section-header" style="margin-top: 90px; margin-bottom: 30px;">
+        <span class="section-badge">World-Class Conveniences</span>
+        <h2 class="section-title">Mall Services & Amenities</h2>
+      </div>
+
+      <div class="amenities-grid">
+        <div class="amenity-card">
+          <div class="amenity-icon"><i class="fa-solid fa-square-parking"></i></div>
+          <h4>Valet & EV Charging</h4>
+          <p>Dedicated fast chargers for electric vehicles & premium automated multi-tier parking.</p>
+        </div>
+        <div class="amenity-card">
+          <div class="amenity-icon"><i class="fa-solid fa-wifi"></i></div>
+          <h4>High-Speed Wi-Fi</h4>
+          <p>Seamless fiber connectivity throughout all shopping atriums, food court, and terraces.</p>
+        </div>
+        <div class="amenity-card">
+          <div class="amenity-icon"><i class="fa-solid fa-baby-carriage"></i></div>
+          <h4>Family & Baby Care</h4>
+          <p>Private nursing rooms, complimentary stroller rentals, and toddler play zones.</p>
+        </div>
+        <div class="amenity-card">
+          <div class="amenity-icon"><i class="fa-solid fa-wheelchair"></i></div>
+          <h4>Accessibility Support</h4>
+          <p>Braille elevators, step-free access ramps, and reserved mobility-assisted parking.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       PAGE 3: SHOP DIRECTORY SECTION
+       ================================================================= -->
+  <section id="shops" class="page-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Explore Brands</span>
+        <h2 class="section-title">Store Directory</h2>
+        <p class="section-subtitle">Filter by category or quickly search for your preferred boutique or retailer.</p>
+      </div>
+
+      <!-- Search & Filters -->
+      <div class="directory-controls">
+        <div class="search-bar-wrap">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" id="storeSearchInput" placeholder="Search by brand name or category (e.g. Zara, Apple, Watch)..." onkeyup="filterStores()" />
+        </div>
+
+        <div class="category-chips">
+          <button class="chip active" onclick="setCategoryFilter('all', this)">All Stores</button>
+          <button class="chip" onclick="setCategoryFilter('fashion', this)">Luxury & Fashion</button>
+          <button class="chip" onclick="setCategoryFilter('electronics', this)">Electronics & Tech</button>
+          <button class="chip" onclick="setCategoryFilter('beauty', this)">Beauty & Wellness</button>
+          <button class="chip" onclick="setCategoryFilter('jewelry', this)">Jewelry & Watches</button>
+          <button class="chip" onclick="setCategoryFilter('footwear', this)">Footwear & Sports</button>
+        </div>
+      </div>
+
+      <!-- Store Grid (Dynamically Rendered / Filtered) -->
+      <div class="shops-grid" id="shopsGrid">
+        <!-- Store Cards will render via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       PAGE 4: DINING & ENTERTAINMENT SECTION
+       ================================================================= -->
+  <section id="dining" class="page-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Flavors & Excitement</span>
+        <h2 class="section-title">Dining & Entertainment</h2>
+        <p class="section-subtitle">From Michelin-starred bistros to adrenaline-filled entertainment arenas.</p>
+      </div>
+
+      <div class="dining-showcase">
+        <div class="dining-featured">
+          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800&auto=format&fit=crop" alt="The Sky Garden Lounge" />
+          <div class="dining-overlay">
+            <h3>The Skyview Terrace Lounge</h3>
+            <p>Level 5 • Gourmet European Pan-Asian Fusion with panoramic skyline views and live jazz on weekends.</p>
+            <span style="color: var(--gold-light); font-size: 0.9rem;"><i class="fa-regular fa-clock"></i> 12:00 PM – 11:30 PM</span>
+          </div>
+        </div>
+
+        <div class="dining-featured">
+          <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=800&auto=format&fit=crop" alt="Cineplex IMAX" />
+          <div class="dining-overlay">
+            <h3>RK Cinepolis 8-Screen IMAX</h3>
+            <p>Level 4 • Plush recliners, Dolby Atmos audio, VIP in-seat culinary service, and midnight screenings.</p>
+            <span style="color: var(--gold-light); font-size: 0.9rem;"><i class="fa-solid fa-film"></i> Now Showing Global Blockbusters</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Food Court Highlights -->
+      <div style="margin-top: 60px;">
+        <div class="section-header">
+          <span class="section-badge">Food Court & Quick Bites</span>
+          <h2 class="section-title">Level 3: The Global Kitchens</h2>
+        </div>
+
+        <div class="shops-grid">
+          <div class="store-card">
+            <div class="store-thumb">
+              <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?q=80&w=600&auto=format&fit=crop" alt="Artisan Cafe" />
+              <span class="store-tag">Coffee House</span>
+            </div>
+            <div class="store-body">
+              <h3 class="store-name">Roast & Bean Roastery</h3>
+              <p class="store-desc">Single-origin pour-overs, cold brews, and oven-fresh French patisserie.</p>
+              <div class="store-meta">
+                <span><i class="fa-solid fa-location-dot"></i> Ground Floor Atrium</span>
+                <span><i class="fa-regular fa-clock"></i> 8:00 AM – 10:00 PM</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="store-card">
+            <div class="store-thumb">
+              <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=600&auto=format&fit=crop" alt="Gourmet Burger" />
+              <span class="store-tag">American Grill</span>
+            </div>
+            <div class="store-body">
+              <h3 class="store-name">The Prime Burger Bar</h3>
+              <p class="store-desc">Hand-smashed wagyu patties, artisanal brioche buns, and gourmet milkshakes.</p>
+              <div class="store-meta">
+                <span><i class="fa-solid fa-location-dot"></i> Level 3, Food Court</span>
+                <span><i class="fa-regular fa-clock"></i> 11:00 AM – 11:00 PM</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="store-card">
+            <div class="store-thumb">
+              <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=600&auto=format&fit=crop" alt="Organic Bowls" />
+              <span class="store-tag">Health & Organic</span>
+            </div>
+            <div class="store-body">
+              <h3 class="store-name">Verde Clean Bowls</h3>
+              <p class="store-desc">Farm-to-table organic salad bowls, matcha shakes, and cold-pressed elixirs.</p>
+              <div class="store-meta">
+                <span><i class="fa-solid fa-location-dot"></i> Level 3, Bay 12</span>
+                <span><i class="fa-regular fa-clock"></i> 10:00 AM – 10:30 PM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       PAGE 5: EVENTS & OFFERS SECTION
+       ================================================================= -->
+  <section id="events" class="page-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Happenings</span>
+        <h2 class="section-title">Events & Seasonal Offers</h2>
+        <p class="section-subtitle">Exciting festivities, live music performances, and exclusive promotional campaigns.</p>
+      </div>
+
+      <div class="events-grid">
+        <div class="event-card">
+          <img class="event-img" src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=600&auto=format&fit=crop" alt="Live Concert" />
+          <div class="event-content">
+            <span class="event-date-chip"><i class="fa-regular fa-calendar"></i> This Saturday • 6:30 PM</span>
+            <h3 class="event-title">Symphony at the Central Plaza</h3>
+            <p class="event-text">Enjoy an evening of open-air orchestral performances featuring classical and modern cinematic themes.</p>
+            <span class="highlight-link">Free Public Entry</span>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <img class="event-img" src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=600&auto=format&fit=crop" alt="Shopping Festival" />
+          <div class="event-content">
+            <span class="event-date-chip"><i class="fa-regular fa-calendar"></i> Whole Month Special</span>
+            <h3 class="event-title">The Grand Lifestyle Extravaganza</h3>
+            <p class="event-text">Shop worth $250 or more and enter the weekly sweepstakes for luxury travel vouchers and gift hampers.</p>
+            <span class="highlight-link">View Terms & Brands</span>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <img class="event-img" src="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?q=80&w=600&auto=format&fit=crop" alt="Artisan Fair" />
+          <div class="event-content">
+            <span class="event-date-chip"><i class="fa-regular fa-calendar"></i> Next Weekend</span>
+            <h3 class="event-title">Artisan & Craft Gourmet Fair</h3>
+            <p class="event-text">Explore handcrafted jewelry, ceramic popups, artisan cheeses, and live dessert sculpting sessions.</p>
+            <span class="highlight-link">Level 2 East Wing</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       PAGE 6: CONTACT & VISIT SECTION
+       ================================================================= -->
+  <section id="contact" class="page-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Get in Touch</span>
+        <h2 class="section-title">Plan Your Visit & Contact Us</h2>
+        <p class="section-subtitle">Need concierge help, store leasing details, or event booking inquiries? We are here for you.</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Contact Form -->
+        <div class="contact-card">
+          <h3 style="font-family: var(--font-display); font-size: 1.6rem; margin-bottom: 20px;">Send Us a Message</h3>
+          <form id="contactForm" onsubmit="handleFormSubmit(event)">
+            <div class="form-group">
+              <label for="fullName">Your Full Name</label>
+              <input type="text" id="fullName" class="form-control" placeholder="e.g. Eleanor Vance" required />
+            </div>
+
+            <div class="form-group">
+              <label for="emailAddr">Email Address</label>
+              <input type="email" id="emailAddr" class="form-control" placeholder="name@example.com" required />
+            </div>
+
+            <div class="form-group">
+              <label for="inquiryType">Reason for Inquiry</label>
+              <select id="inquiryType" class="form-control">
+                <option value="general">General Visitor Inquiry & Lost & Found</option>
+                <option value="leasing">Brand Retail / Kiosk Leasing</option>
+                <option value="events">Host an Event / Promotion</option>
+                <option value="feedback">Guest Experience Feedback</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="messageBox">Your Message</label>
+              <textarea id="messageBox" class="form-control" placeholder="Please write your questions or leasing proposition here..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-gold" style="width: 100%;">
+              <i class="fa-regular fa-paper-plane"></i> Submit Inquiry
+            </button>
+          </form>
+        </div>
+
+        <!-- Visit Info & Direction -->
+        <div>
+          <div class="info-list">
+            <div class="info-item">
+              <div class="info-icon"><i class="fa-solid fa-map-pin"></i></div>
+              <div class="info-text">
+                <h4>Mall Location</h4>
+                <p>The RK Residency Mall, Plot 42-A, Grand Promenade Avenue, Metro Station Gate 4, Downtown Core.</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon"><i class="fa-solid fa-clock"></i></div>
+              <div class="info-text">
+                <h4>Hours of Operation</h4>
+                <p><strong>Retail Boutiques:</strong> 10:00 AM – 10:00 PM<br/>
+                   <strong>Dining & Cinema:</strong> 10:00 AM – 12:00 Midnight (Daily)</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon"><i class="fa-solid fa-phone-volume"></i></div>
+              <div class="info-text">
+                <h4>Phone & Concierge</h4>
+                <p>+1 (800) 420-7539 / +91 (11) 4567-8900<br/>support@therkresidency.com</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stylized Map Placeholder -->
+          <div class="map-embed">
+            <div>
+              <i class="fa-solid fa-diamond-turn-right" style="font-size: 2.5rem; color: var(--gold-primary); margin-bottom: 12px;"></i>
+              <h4 style="color: #fff; margin-bottom: 6px;">Express Metro & Highway Access</h4>
+              <p>Direct underground walkway connected from Central Metro Interchange. Dedicated taxi pick-up portal at Basements 1 & 2.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       FOOTER
+       ================================================================= -->
+  <footer class="mall-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="logo">
+            <div class="logo-symbol">RK</div>
+            <div class="logo-text">
+              <h1>THE RK RESIDENCY</h1>
+              <span>Mall & Lifestyle Center</span>
+            </div>
+          </div>
+          <p class="footer-desc">
+            The city's preeminent destination for refined luxury shopping, culinary mastery, and world-class theatrical entertainment.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <div class="footer-links">
+            <a href="#home" onclick="navigatePage('home')">Home Overview</a>
+            <a href="#about" onclick="navigatePage('about')">Our History</a>
+            <a href="#shops" onclick="navigatePage('shops')">Store Directory</a>
+            <a href="#dining" onclick="navigatePage('dining')">Dining Guide</a>
+            <a href="#events" onclick="navigatePage('events')">Events & Offers</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Guest Amenities</h4>
+          <div class="footer-links">
+            <a href="#contact" onclick="navigatePage('contact')">Concierge Desk</a>
+            <a href="#contact" onclick="navigatePage('contact')">Valet Parking Rates</a>
+            <a href="#contact" onclick="navigatePage('contact')">Gift Cards</a>
+            <a href="#contact" onclick="navigatePage('contact')">Wheelchair & Buggy</a>
+            <a href="#contact" onclick="navigatePage('contact')">Lost & Found Service</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Stay Informed</h4>
+          <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 12px;">
+            Subscribe to receive private invitations to runway shows, private sales, and seasonal celebrations.
+          </p>
+          <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+            <input type="email" class="newsletter-input" placeholder="Your email address" required />
+            <button type="submit" class="btn btn-gold" style="padding: 10px 18px;">
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 The RK Residency Mall. All rights reserved.</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="#" style="color: var(--text-muted);">Privacy Policy</a>
+          <a href="#" style="color: var(--text-muted);">Terms of Service</a>
+          <a href="#" style="color: var(--text-muted);">Leasing Portal</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Notification Toast -->
+  <div id="toast" class="toast-msg">Thank you! Your message has been sent.</div>
+
+  <!-- =================================================================
+       JAVASCRIPT APP LOGIC
+       ================================================================= -->
+  <script>
+    /* -------------------------------------------------------------
+       STORE DIRECTORY DATABASE
+       ------------------------------------------------------------- */
+    const storeData = [
+      {
+        id: 1,
+        name: "Aura Haute Couture",
+        category: "fashion",
+        categoryName: "Luxury Fashion",
+        floor: "Level 1, Shop 104",
+        desc: "Designer apparel, bespoke evening wear, and international runway collections.",
+        image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=600&auto=format&fit=crop"
+      },
+      {
+        id: 2,
+        name: "Apex Apple Premium",
+        category: "electronics",
+        categoryName: "Electronics",
+        floor: "Level 2, Shop 218",
+        desc: "Official authorized flagship studio with full line of devices, genius desk, and accessories.",
+        image: "https://images.unsplash.com/photo-1510519138111-550daac56382?q=80&w=600&auto=format&fit=crop"
+      },
+      {
+        id: 3,
+        name: "Lumière Parfumerie",
+        category: "beauty",
+        categoryName: "Beauty & Wellness",
+        floor: "Ground Floor, Shop G-12",
+        desc: "Exclusive niche fragrances from Grasse, luxury skincare, and beauty consultations.",
+        image: "https://images.unsplash.com/photo-1547887537-6158d64c35b3?q=80&w=600&auto=format&fit=crop"
+      },
+      {
+        id: 4,
+        name: "Chronos & Co. Horlogerie",
+        category: "jewelry",
+        categoryName: "Jewelry & Watches",
+        floor: "Level 1, Shop 108",
+        desc: "Authorized retailers of Swiss timepieces, diamonds, and collector edition chronographs.",
+        image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=600&auto=format&fit=crop"
+      },
+      {
+        id: 5,
+        name: "Velocity Performance Sports",
+        category: "footwear",
+        categoryName: "Footwear & Sports",
+        floor: "Level 2, Shop 240",
+        desc: "High-performance athletic apparel, running footwear, and activewear for lifestyle enthusiasts.",
+        image: "https://images.unsplash.com/photo-1556906781-9a412961c28c?q=80&w=600&auto=format&fit=crop"
+      },
+      {
+        id: 6,
+        name: "Zara Studio & Men",
+        category: "fashion",
+        categoryName: "Fashion",
+        floor: "Ground & Level 1",
+        desc: "Two-story flagship featuring the complete contemporary wardrobe and home decor essentials.",
+        image: "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?q=80&w=600&auto=format&fit=crop"
+      },
+      {
+        id: 7,
+        name: "Bang & Olufsen Sound Lab",
+        category: "electronics",
+        categoryName: "Electronics",
+        floor: "Level 2, Shop 222",
+        desc: "Immersive home theater acoustic systems, bespoke wireless headphones, and design electronics.",
+        image: "https://images.unsplash.com/photo-1546435770-a3e426bf472b?q=80&w=600&auto=format&fit=crop"
+      },
+      {
+        id: 8,
+        name: "Kalyan Heritage Jewels",
+        category: "jewelry",
+        categoryName: "Jewelry",
+        floor: "Level 1, Shop 115",
+        desc: "Handcrafted 22K gold, polki, certified solitaires, and royal bridal adornments.",
+        image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=600&auto=format&fit=crop"
+      }
+    ];
+
+    let currentCategory = 'all';
+
+    // Render Stores into DOM
+    function renderStores(stores) {
+      const container = document.getElementById('shopsGrid');
+      if (!container) return;
+
+      if (stores.length === 0) {
+        container.innerHTML = `
+          <div style="grid-column: 1/-1; text-align: center; padding: 60px 0; color: var(--text-muted);">
+            <i class="fa-solid fa-store-slash" style="font-size: 3rem; margin-bottom: 15px; color: var(--gold-primary);"></i>
+            <h3>No Brands Found</h3>
+            <p>Try searching for a different keyword or category.</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = stores.map(store => `
+        <div class="store-card">
+          <div class="store-thumb">
+            <img src="${store.image}" alt="${store.name}" loading="lazy" />
+            <span class="store-tag">${store.categoryName}</span>
+          </div>
+          <div class="store-body">
+            <h3 class="store-name">${store.name}</h3>
+            <p class="store-desc">${store.desc}</p>
+            <div class="store-meta">
+              <span><i class="fa-solid fa-map-pin"></i> ${store.floor}</span>
+              <span><i class="fa-regular fa-clock"></i> 10AM – 10PM</span>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Filter Stores by Search & Category
+    function filterStores() {
+      const searchVal = document.getElementById('storeSearchInput').value.toLowerCase().trim();
+      
+      const filtered = storeData.filter(store => {
+        const matchesCategory = currentCategory === 'all' || store.category === currentCategory;
+        const matchesSearch = store.name.toLowerCase().includes(searchVal) ||
+                              store.categoryName.toLowerCase().includes(searchVal) ||
+                              store.desc.toLowerCase().includes(searchVal);
+        return matchesCategory && matchesSearch;
+      });
+
+      renderStores(filtered);
+    }
+
+    function setCategoryFilter(category, buttonEl) {
+      currentCategory = category;
+      
+      // Update active chip classes
+      const chips = document.querySelectorAll('.category-chips .chip');
+      chips.forEach(c => c.classList.remove('active'));
+      if (buttonEl) buttonEl.classList.add('active');
+
+      filterStores();
+    }
+
+    /* -------------------------------------------------------------
+       PAGE NAVIGATION ROUTING (HASH-BASED SPA)
+       ------------------------------------------------------------- */
+    const pages = ['home', 'about', 'shops', 'dining', 'events', 'contact'];
+
+    function navigatePage(pageId) {
+      if (!pages.includes(pageId)) pageId = 'home';
+
+      // 1. Toggle Page Visibility
+      pages.forEach(p => {
+        const sec = document.getElementById(p);
+        if (sec) {
+          if (p === pageId) {
+            sec.classList.add('active-page');
+          } else {
+            sec.classList.remove('active-page');
+          }
+        }
+      });
+
+      // 2. Update Navbar Links
+      const navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === `#${pageId}`) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+
+      // 3. Close mobile menu if open
+      document.getElementById('navLinks').classList.remove('mobile-open');
+
+      // 4. Scroll smoothly to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Hash listener for bookmarks and back/forward browser buttons
+    window.addEventListener('hashchange', () => {
+      const hash = window.location.hash.replace('#', '');
+      if (hash) {
+        navigatePage(hash);
+      }
+    });
+
+    // Mobile Hamburger Toggle
+    document.getElementById('mobileToggle').addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('mobile-open');
+    });
+
+    /* -------------------------------------------------------------
+       FORM SUBMISSION TOASTS
+       ------------------------------------------------------------- */
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 4000);
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('fullName').value;
+      showToast(`Thank you, ${name}! Your inquiry has been sent to Mall Concierge.`);
+      e.target.reset();
+    }
+
+    function handleNewsletter(e) {
+      e.preventDefault();
+      showToast("Thank you for joining The RK Residency VIP Club!");
+      e.target.reset();
+    }
+
+    /* -------------------------------------------------------------
+       INITIALIZATION
+       ------------------------------------------------------------- */
+    window.addEventListener('DOMContentLoaded', () => {
+      renderStores(storeData);
+
+      // Check current hash on initial load
+      const initialHash = window.location.hash.replace('#', '');
+      if (initialHash && pages.includes(initialHash)) {
+        navigatePage(initialHash);
+      } else {
+        navigatePage('home');
+      }
+    });
+  </script>
+</body>
+</html>
